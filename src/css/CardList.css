@@ -1,0 +1,61 @@
+/* CardList.css */
+
+.card-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin: 20px;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+  }
+
+  h2{
+    align-self: center;
+    margin: auto auto;
+    }
+
+  
+  .badge {
+    position: absolute;
+    top: -7px;
+    right: 0;
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 50%;
+    padding: 8px;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+  }
+
+  .title-container{
+    margin: auto auto;
+    width: fit-content;
+  }
+
+  .title-card{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    background: gainsboro;
+  }
+  
+  /* Add a media query for responsiveness */
+  @media (max-width: 800px) {
+    .card-container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  }
+  

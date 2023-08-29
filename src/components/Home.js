@@ -25,7 +25,7 @@ const Home = () => {
     <>
       <div className="card-container">
         {
-          Object.keys(groupedAlbums).map((userId) => (
+          Object.keys(groupedAlbums).map((userId, index) => (
             <Card key={userId} title={userId} handleClick={() => getFilteredAlbums(userId)} numberOfCards={groupedAlbums[userId].length} />
           ))
         }

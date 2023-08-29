@@ -6,6 +6,8 @@ const NoteState = (props) => {
   const notesInitial = [];
   const [albums, setAlbums] = useState(notesInitial);
   const [filteredAlbums, setFilteredAlbums] = useState(notesInitial);
+  const [activeCard, setActiveCard] = useState(null);
+
 
   const getAlbums = async () => {
     const response = await fetch(`${host}/albums`, {
@@ -21,11 +23,13 @@ const NoteState = (props) => {
 
   
   const getFilteredAlbums = async(searchTerm) => {
-    console.log("searchTerm",searchTerm)
+    
     if(!searchTerm) {
       setFilteredAlbums([])
+      setActiveCard(null)
       return;
     }
+    setActiveCard(searchTerm)
     const filtered = albums.filter(
       (album) =>
         album.title.includes(searchTerm) ||
@@ -37,7 +41,7 @@ const NoteState = (props) => {
 
   return (
     <NoteContext.Provider
-      value={{ albums, filteredAlbums, getAlbums, getFilteredAlbums }}
+      value={{ albums, filteredAlbums, getAlbums, getFilteredAlbums, activeCard }}
     >
       {props.children}
     </NoteContext.Provider>

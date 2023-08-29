@@ -1,61 +1,69 @@
 /* CardList.css */
 
 .card-container {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    margin: 20px;
-  }
-  
-  .card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    width: 200px;
-    height: 200px;
-    background-color: lightblue;
-  }
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin: 20px;
+}
 
-  h2{
-    align-self: center;
-    margin: auto auto;
-    }
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+}
 
-  
-  .badge {
-    position: absolute;
-    top: -7px;
-    right: 0;
-    background-color: rebeccapurple;
-    color: white;
-    border-radius: 50%;
-    padding: 8px;
-    height: 40px;
-    width: 40px;
-    font-size: 20px;
-  }
+.active-card {
+  background-color: lightcoral;
+  perspective: 1000px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
 
-  .title-container{
-    margin: auto auto;
-    width: fit-content;
-  }
+h2 {
+  align-self: center;
+  margin: auto auto;
+}
 
-  .title-card{
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    margin: 20px;
-    background: gainsboro;
+h5 {
+  margin: 0;
+}
+
+.badge {
+  position: absolute;
+  top: -7px;
+  right: -10;
+  background-color: rebeccapurple;
+  color: white;
+  border-radius: 50%;
+  padding: 8px;
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+}
+
+.title-container {
+  margin: auto auto;
+  width: fit-content;
+}
+
+.title-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+  background: gainsboro;
+}
+
+@media (max-width: 800px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
-  
-  /* Add a media query for responsiveness */
-  @media (max-width: 800px) {
-    .card-container {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-  }
-  
+}
